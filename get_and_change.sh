@@ -2,18 +2,18 @@
 #
 # Author: KZKG^Gaara (https://x.com/kzkggaara)
 #
-# Requerimientos:
+# Requirements:
 # - KDE Plasma
 # - wget
 # - curl
 # 
-# Que hace?:
-# 1. Comprueba si usas KDE [linea 18]
-# 2. Obtiene un numero aleatorio [linea 20]
-# 3. Estableces tu resolucion de pantalla [linea 21]
-# 3. Descarga un wallpaper aleatorio en /tmp/ [linea 23]
-# 4. Establece ese wallpaper como default en todos tus escritorios [linea 25-34]
-# 5. Elimina el anterior wallpaper descargado la vez pasada [linea 36]
+# What does this script do?:
+# 1. Check if you are using KDE [line 18]
+# 2. Get a random number [line 20]
+# 3. Set your screen resolution [line 21]
+# 3. Download to /tmp/ some random wallpaper [line 23]
+# 4. Put the wallpaper as default in all your desktops [line 25-34]
+# 5. Delete the old one downloaded last time [line 36]
 
 if pgrep -x "plasmashell" >/dev/null; then
 
@@ -37,7 +37,7 @@ if pgrep -x "plasmashell" >/dev/null; then
 
 else
     echo ""
-    echo "No estás utilizando KDE Plasma"
-    echo "Este script está programado pensando en usarse solo en KDE"
+    echo "Sorry dude but you are not using KDE Plasma"
+    echo "This script is only for KDE Plasma's users"
     echo ""
 fi
