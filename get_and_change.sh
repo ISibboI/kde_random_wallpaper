@@ -16,6 +16,7 @@ if pgrep -x "plasmashell" >/dev/null; then
             "General");
         d.writeConfig("Image", "file://'$WALLPAPER'");
     }'
+    kwriteconfig5 --file kscreenlockerrc --group Greeter --group Wallpaper --group org.kde.image --group General --key Image "file://$WALLPAPER"
 
 else
     echo ""
