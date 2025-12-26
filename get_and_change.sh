@@ -6,6 +6,7 @@ if pgrep -x "plasmashell" >/dev/null; then
 
     WALLPAPER=$(find /data/Wallpapers -type f | shuf -n 1)
 
+    # Desktop
     dbus-send --session --dest=org.kde.plasmashell --type=method_call /PlasmaShell org.kde.PlasmaShell.evaluateScript 'string:
     var Desktops = desktops();                                                                                                                       
     for (i=0;i<Desktops.length;i++) {
@@ -16,6 +17,8 @@ if pgrep -x "plasmashell" >/dev/null; then
             "General");
         d.writeConfig("Image", "file://'$WALLPAPER'");
     }'
+
+    # Lockscreen
     kwriteconfig5 --file kscreenlockerrc --group Greeter --group Wallpaper --group org.kde.image --group General --key Image "file://$WALLPAPER"
 
 else
